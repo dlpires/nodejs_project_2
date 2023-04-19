@@ -1,2 +1,2 @@
-# Projeto de Node JS - Criação de Blog com Painel Administrativo
+# NodeJS - Segundo Projeto - Blog com Painel Administrativo
 
