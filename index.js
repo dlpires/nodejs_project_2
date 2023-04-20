@@ -2,6 +2,11 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./database/database");
+const categoriesController = require("./categories/CategoriesController");
+const articlesController = require("./articles/ArticlesController");
+
+const Article = require('./articles/Article');
+const Category = require('./categories/Category');
 
 //View engine
 app.set('view engine', 'ejs');
@@ -20,6 +25,10 @@ connection.authenticate()
     }).catch((error) => {
         console.log("Erro de conexão: "+ error);
     });
+
+//USANDO ROTAS EXTERNAS
+app.use("/",categoriesController);
+app.use("/", articlesController);
 
 app.get("/", (req,res) => {
     res.render("index");
