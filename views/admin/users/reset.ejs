@@ -1,0 +1,21 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/navbar.ejs') %>
+<div class="container">
+    <hr>
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>Nova senha</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/users/reset">
+                <input class="form-control" type="password" name="password" id="password" placeholder="Nova senha">
+                <br>
+                <input class="form-control" type="password" name="password2" id="password2" placeholder="Confirmar Senha">
+                <br>
+                <input type="hidden" name="id" value="<%= id %>">
+                <button class="form-control btn btn-success">Modificar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('../../partials/footer.ejs') %>
